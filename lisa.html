@@ -1,0 +1,255 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width,initial-scale=1">  
+<title>Happy 1 Month Sayang ❤️</title>  
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png">  
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">  
+<style>  
+*{margin:0;padding:0;box-sizing:border-box}  
+body{  
+    font-family:'Poppins',sans-serif;  
+    background:linear-gradient(135deg,#fff0f6 0%,#ffe5f1 50%,#f8e7ff 100%);  
+    min-height:100vh;  
+    color:#444;  
+    overflow-x:hidden;  
+    text-align:center;  
+    position:relative;  
+    animation:bgMove 20s ease-in-out infinite alternate;  
+}  
+@keyframes bgMove{  
+    0%{background-position:0 0;}  
+    100%{background-position:100% 100%;}  
+}  
+h1{  
+    font-family:'Dancing Script',cursive;  
+    font-size:48px;  
+    color:#d63384;  
+    margin-top:60px;  
+    text-shadow:2px 2px 8px rgba(214,51,132,.25);  
+    animation:fadeIn 2s ease;  
+}  
+p{font-size:18px;color:#555;}  
+.bear{position:relative;width:140px;height:120px;margin:40px auto 10px;animation:swing 3s ease-in-out infinite;}  
+@keyframes swing{0%,100%{transform:rotate(3deg)}50%{transform:rotate(-3deg)}}  
+.bear .ear{width:40px;height:40px;background:#c6856a;border-radius:50%;position:absolute;top:0;}  
+.bear .ear.left{left:10px;}  
+.bear .ear.right{right:10px;}  
+.bear .face{background:#deb887;width:140px;height:110px;border-radius:70px;position:absolute;bottom:0;left:0;}  
+.bear .eye{width:14px;height:14px;background:#333;border-radius:50%;position:absolute;top:45px;animation:blink 4s infinite;}  
+@keyframes blink{0%,90%,100%{height:14px;}95%{height:2px;}}  
+.bear .eye.left{left:40px;}  
+.bear .eye.right{right:40px;}  
+.bear .nose{width:22px;height:16px;background:#4a2c1a;border-radius:50%;position:absolute;left:50%;top:58px;transform:translateX(-50%);}  
+.bear .mouth{position:absolute;top:72px;left:50%;width:40px;height:18px;border-bottom:3px solid #4a2c1a;border-radius:0 0 40px 40px;transform:translateX(-50%);}  
+.heart{position:fixed;font-size:22px;color:#ff5d9e;opacity:.8;animation:floatUp linear infinite;pointer-events:none;z-index:1;}  
+@keyframes floatUp{0%{transform:translateY(0) scale(1);opacity:1;}100%{transform:translateY(-110vh) scale(1.3);opacity:0;}}  
+.message{  
+    background:#fff;  
+    display:inline-block;  
+    margin:30px auto;  
+    padding:20px 26px;  
+    border-radius:18px;  
+    box-shadow:0 10px 25px rgba(214,51,132,.15);  
+    color:#d63384;  
+    font-size:20px;  
+    max-width:440px;  
+    line-height:1.5;  
+    animation:fadeIn 1s ease;  
+    min-height:90px;  
+}  
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}  
+.btn{  
+    position:fixed;  
+    bottom:40px;  
+    left:50%;  
+    transform:translateX(-50%);  
+    background:linear-gradient(135deg,#ff74b1 0%,#d63384 100%);  
+    color:#fff;  
+    border:none;  
+    padding:13px 30px;  
+    border-radius:999px;  
+    font-weight:600;  
+    cursor:pointer;  
+    box-shadow:0 8px 20px rgba(214,51,132,.25);  
+    transition:transform .2s ease;  
+    z-index:10;  
+}  
+.btn:active{transform:translateX(-50%) scale(.96);}  
+footer{margin-top:60px;color:#777;font-size:14px;animation:fadeIn 2s ease;}  
+.play-wrap{position:fixed;top:16px;right:16px;z-index:30;}  
+.play-btn{background:linear-gradient(135deg,#ffd6e8 0%,#ff9ccf 100%);border:none;padding:9px 14px;border-radius:10px;font-weight:600;cursor:pointer;box-shadow:0 5px 14px rgba(214,51,132,.18);transition:background .3s;}  
+.play-btn.playing{background:linear-gradient(135deg,#bde0ff 0%,#9bd3ff 100%)}  
+.bokeh{position:fixed;border-radius:50%;opacity:0.35;pointer-events:none;animation:bokehFloat 12s infinite ease-in-out;z-index:0;}  
+@keyframes bokehFloat{0%{transform:translateY(0) scale(1);}50%{transform:translateY(-40px) scale(1.3);}100%{transform:translateY(0) scale(1);} }  
+</style>  
+</head>  
+<body>  
+
+<div class="play-wrap">  
+    <button class="play-btn" id="playMusicBtn">🎵 Putar Musik</button>  
+</div>  
+
+<h1 id="typing"></h1>  
+
+<div class="bear">  
+    <div class="ear left"></div>  
+    <div class="ear right"></div>  
+    <div class="face">  
+        <div class="eye left"></div>  
+        <div class="eye right"></div>  
+        <div class="nose"></div>  
+        <div class="mouth"></div>  
+    </div>  
+</div>  
+
+<div class="message" id="msgBox"></div>  
+
+<div id="timeTogetherFull" style="font-size:18px;color:#d63384;margin-top:10px;"></div>
+
+<button class="btn" id="changeMsg">Klik tombol ini 💌</button>  
+
+<footer>Untuk kamu, yang selalu jadi alasan aku tersenyum setiap hari 💖</footer>  
+
+<div style="position:fixed;left:-9999px;top:-9999px;">  
+    <iframe id="ytFrame" width="1" height="1" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>  
+</div>  
+
+<script>  
+// efek hati  
+function spawnHeart(){  
+    const h=document.createElement('div');  
+    h.className='heart';  
+    h.textContent='💗';  
+    h.style.left=Math.random()*100+'%';  
+    h.style.animationDuration=(Math.random()*3+5)+'s';  
+    h.style.fontSize=(Math.random()*16+18)+'px';  
+    document.body.appendChild(h);  
+    setTimeout(()=>h.remove(),7000);  
+}  
+setInterval(spawnHeart,500);  
+
+// efek bokeh  
+function createBokeh(){  
+    const b=document.createElement('div');  
+    b.className='bokeh';  
+    const size=Math.random()*40+20;  
+    b.style.width=b.style.height=size+'px';  
+    b.style.left=Math.random()*100+'%';  
+    b.style.top=Math.random()*100+'%';  
+    b.style.background=`rgba(255,255,255,${Math.random()*0.3+0.1})`;  
+    b.style.animationDuration=(Math.random()*6+6)+'s';  
+    document.body.appendChild(b);  
+    setTimeout(()=>b.remove(),12000);  
+}  
+setInterval(createBokeh,800);  
+
+// efek mengetik judul  
+const text="Happy 1 Month, Sayang ❤️";  
+let i=0;  
+function typing(){  
+    if(i<text.length){  
+        document.getElementById("typing").textContent+=text.charAt(i);  
+        i++;  
+        setTimeout(typing,85);  
+    }  
+}  
+typing();  
+
+// pesan acak  
+const msgs=[  
+    "satu bulan ini berjalan begitu indah, karena setiap harinya ada kamu yang selalu buat segalanya terasa berarti 💞",  
+    "Aku nggak tahu gimana hidupku sebelum kamu, tapi sejak kamu datang, semuanya jadi lebih hangat dan tenang 💗",  
+    "Kamu itu bukan cuma orang yang aku sayang, tapi juga tempat aku pulang, tempat aku tenang ❤️",  
+    "Bersamamu, dunia terasa lebih ringan. Segala hal kecil pun jadi indah karena ada kamu di dalamnya 🌷",  
+    "satu bulan ini cuma awal dari kisah panjang yang aku pengen tulis bareng kamu ✨"  
+];  
+let last=-1;  
+const box=document.getElementById("msgBox");  
+let currentTypeInterval = null; // <-- KODE PERBAIKAN: Variabel untuk menyimpan interval
+
+function typeMessage(msg){  
+    // <-- KODE PERBAIKAN: Hentikan interval lama jika ada
+    if (currentTypeInterval) {
+        clearInterval(currentTypeInterval);
+    }
+    
+    box.textContent="";  
+    let j=0;  
+    
+    // <-- KODE PERBAIKAN: Simpan interval baru
+    currentTypeInterval = setInterval(()=>{  
+        box.textContent+=msg.charAt(j);  
+        j++;  
+        if(j>=msg.length) {
+            clearInterval(currentTypeInterval); // Hentikan interval ini
+            currentTypeInterval = null; // <-- KODE PERBAIKAN: Setel ulang
+        }
+    },40);  
+}  
+typeMessage(msgs[0]);  
+
+document.getElementById("changeMsg").addEventListener("click",()=>{  
+    let r;  
+    do{r=Math.floor(Math.random()*msgs.length)}while(r===last);  
+    last=r;  
+    typeMessage(msgs[r]);  
+});  
+
+// musik YouTube  
+function playYouTubeMusic(){  
+    const id="mJE0ROBWPvY";  
+    const iframe=document.getElementById("ytFrame");  
+    iframe.src=`https://www.youtube.com/embed/${id}?autoplay=1&loop=1&playlist=${id}&rel=0&mute=0&start=50&enablejsapi=1&allow=autoplay`;  
+}  
+const btn=document.getElementById("playMusicBtn");  
+let playing=false;  
+btn.addEventListener("click",()=>{  
+    const iframe=document.getElementById("ytFrame");  
+    if(playing){  
+        iframe.src="";  
+        btn.textContent="🎵 Putar Musik";  
+        btn.classList.remove("playing");  
+        playing=false;  
+    }else{  
+        playYouTubeMusic();  
+        btn.textContent="🎶 Musik Diputar";  
+        btn.classList.add("playing");  
+        playing=true;  
+    }  
+});  
+
+// durasi bulan, hari, jam, menit, detik
+function updateTimeTogetherFull() {
+    const start = new Date("2025-10-15T08:44:00");
+    const now = new Date();
+    let diffMs = now - start;
+    
+    const diffSecTotal = Math.floor(diffMs / 1000);
+
+    const seconds = diffSecTotal % 60;
+    const minutesTotal = Math.floor(diffSecTotal / 60);
+    const minutes = minutesTotal % 60;
+    const hoursTotal = Math.floor(minutesTotal / 60);
+    const hours = hoursTotal % 24;
+    const daysTotal = Math.floor(hoursTotal / 24);
+    const months = Math.floor(daysTotal / 30); // perkiraan 30 hari per bulan
+    const days = daysTotal % 30;
+
+    // efek animasi angka (fade)
+    const el = document.getElementById("timeTogetherFull");
+    el.style.opacity = 0;
+    setTimeout(() => {
+        el.textContent = `Kita telah bersama selama ${months} bulan, ${days} hari, ${hours} jam, ${minutes} menit, dan ${seconds} detik 💖`;
+        el.style.transition = "opacity 0.5s";
+        el.style.opacity = 1;
+    }, 200);
+}
+
+// update setiap detik
+setInterval(updateTimeTogetherFull, 1000);
+updateTimeTogetherFull();
+</script>  
+</body>  
+</html>
